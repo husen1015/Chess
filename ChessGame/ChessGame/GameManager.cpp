@@ -6,11 +6,11 @@ unsigned int GameManager::PlayTurn(std::string moveOrder)
 	parseMove(moveOrder);
 
 	//check validity of order
-	if (isValidMove()) {
-		//attempt to make the move
-		std::cout << moveOrder;
+	unsigned int status = checkValidMove();
+	if (status != VALID_RESULT) {
+		return status;
 	}
-	return 0;
+	//attempt move
 }
 
 void GameManager::parseMove(const std::string moveOrder)
@@ -22,11 +22,19 @@ void GameManager::parseMove(const std::string moveOrder)
 	_dst.setY(abs(moveOrder[3] - 56)); //dst row
 }
 
-bool GameManager::isValidMove() const
+unsigned int GameManager::checkValidMove() const
 {
-	//check if src!=dst
+	//check if src != dst
+	if (_src == _dst) return SAME_CORDS_ERROR;
 
-	//check if dst doesnt have a piece in place of same type
+	//check if src has a piece of the current player
+	
+	//check if dst has a piece of same type as player
 
-	return true;
+	//this move will cause check on the current player ie self check
+
+	//check if moving this piece is legal as per its movement rules
+
+	//valid move
+	return VALID_RESULT;
 }

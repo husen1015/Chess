@@ -9,7 +9,7 @@ class GameManager {
 public: 
 	unsigned int PlayTurn(const std::string moveOrder);
 	void parseMove(const std::string moveOrder);
-	bool isValidMove()const;
+	unsigned int checkValidMove()const;
 private:
 	Cord _src, _dst;
 };
