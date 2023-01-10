@@ -34,3 +34,9 @@ bool Cord::operator==(const Cord& other)const
 {
 	return _x == other.getX() && _y == other.getY();
 }
+
+Cord* Cord::operator=(const Cord& other)
+{
+	this->_x = other._x;
+	this->_y = other._y;
+}

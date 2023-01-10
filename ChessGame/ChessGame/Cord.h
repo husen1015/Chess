@@ -1,6 +1,9 @@
 #pragma once
+
+//this class represents a single 2d coordinate on the board
 class Cord {
 public:
+	//ctors
 	Cord();
 	Cord(int x, int y);
 
@@ -14,7 +17,7 @@ public:
 
 	//operator
 	bool operator==(const Cord& other)const;
-
+	Cord* operator=(const Cord& other);
 private:
 	int _x;
 	int _y;
